@@ -36,11 +36,11 @@ function getcomp()
 
 function getnum(a)
 {
-    if(a=="rock")
+    if(a.toLowerCase()=="rock")
     return 1;
-else if(a=="paper")
+else if(a.toLowerCase()=="paper")
 return 2;
-else if(a=="scissors")
+else if(a.toLowerCase()=="scissors")
 return 3;
 else
 return -1;
@@ -62,12 +62,17 @@ function getscore(a,b)
     if(x==1 && y==2 || x==3 && y==1 || x==2 && y==3)
 {
     compscore++;
+    console.log(`you chose ${ch.toLowerCase()} and machine chose ${com} `);
+    console.log(`computer gets a point! ${b} beats ${a.toLowerCase()}!!`);
     return;
+
 
 }
 else
 {
     myscore++;
+    console.log(`you chose ${ch.toLowerCase()} and machine chose ${com} `);
+    console.log(`you get a point! ${a.toLowerCase()} beats ${b}!!`);
     return;
 }
 }
@@ -76,10 +81,10 @@ function winner(a,b)
 {
     if(a==b)
 {
-    alert("it was a tie!");
+    console.log("it was a tie!");
     return;
 }
-a>b?alert("HOOMAN HAS WON!"): alert("MACHINE HAS WON");
+a>b?console.log("HOOMAN HAS WON!"): console.log("MACHINE HAS WON");
 return;
 
 }
@@ -100,8 +105,14 @@ while((myscore+compscore)<5)
 }
 
     com = getcomp();
+
+    if(getnum(com)==-1)
+{
+    alert ("wth");
+}
     getscore(ch, com);
-    alert(`you chose ${ch} and machine chose ${com} score: ${myscore} - ${compscore}   `);
+    
+    console.log(`score: ${myscore} - ${compscore}   `);
 }
 
 winner(myscore, compscore);
