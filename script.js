@@ -1,17 +1,31 @@
-console.log("welcome to the game of rock paper scissors! are you ready?");
-while(prompt("enter y to start the game")!=="y")
-{
-continue;
-}
+// console.log("welcome to the game of rock paper scissors! are you ready?");
+// while(prompt("enter y to start the game")!=="y")
+// {
+// continue;
+// }
 
+const humanChoice = document.querySelector(".you");
+const compChoice = document.querySelector(".comp");
+
+let val = '';
 
 function getchoice()
 {
-ch = prompt("enter ur choice");
+alert("enter ur choice");
+const ch = document.querySelector(".choice");
 
+ch.addEventListener("click", (e)=>{
+    const targ = e.target;
+    val = targ.id;
+    
 
-
+} )
+console.log(val);
+const txt = document.createTextNode(val);
+humanChoice.appendChild(txt);
 }
+
+
 function getcomp()
 {
 let x = Math.floor(Math.random()*3)+1; // gets a ranodm number between 1 2 3 1-rock, 2- paper, 3- scissors
@@ -88,9 +102,9 @@ let com;
 
 while((myscore+compscore)<5)
 {
-setTimeout(getchoice(), 3000);
-console.log(getnum(ch));
-if(getnum(ch)==-1)
+getchoice();
+console.log(getnum(val));
+if(getnum(val)==-1)
 {
 alert("invalid choice");
 continue;
