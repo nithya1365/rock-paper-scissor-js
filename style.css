@@ -5,23 +5,57 @@
 
 }
 
+.start{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+
+.endpage{
+    display:none;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2em;
+
+    
+
+}
+
+
+
+.bt,  .replay{
+    background-color: pink;
+    padding:20px;
+    border-radius: 30px;
+
+    
+}
+
 .container{
    
-    border: 2px solid black;
-    display: flex;
-    height: 100vh;
+    /* border: 2px solid black; */
+    display: none;
+    
     flex-direction: column;
     gap: 2em;
     text-align: center;
     width: 600px;
     margin: auto;
+    height:100vh;
+    justify-content: center;
+
+    
+    
 
 }
 
 .choice{
     display: flex;
     justify-content: space-around;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 
 
     
@@ -43,6 +77,16 @@
     border: 2px solid black;
     justify-content: space-around;
 
+}
+
+button{
+    cursor: pointer;
+}
+
+.comp, .you{
+    display:flex;
+    justify-content: center;
+    gap:1em;
 }
 
 
